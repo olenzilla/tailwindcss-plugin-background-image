@@ -74,7 +74,7 @@ Object whose keys are glob patterns, and whose values are the corresponding [Glo
 { './src/**/*.@(jpg|jpeg|png|gif|svg|webp)': { dot: true } }
 ```
 
-### makeStyle
+### `makeStyle`
 Type: `function(imagePath: string): {backgroundImage: string}` or `false`/`null`/`undefined`
 
 A function that takes the path of each image retrieved by the glob(s), and returns a dictionary for the `background-image` style of the created Tailwind utility. Or, if falsy, no utility will be created for that image. Default:
@@ -82,7 +82,7 @@ A function that takes the path of each image retrieved by the glob(s), and retur
 (image) => ({ backgroundImage: `url('${image}')` })
 ```
 
-### makeUtilityWithExtension
+### `makeUtilityWithExtension`
 Type: ```function(imagePath: string): string | false | null | undefined``` or `false`/`null`/`undefined`
 
 A function that takes the path of each image retrieved by the glob(s), and returns the name of the Tailwind utility to be created _with_ the image's extension (to disambiguate it from another image with the same name but different extension). Or, if falsy, no utility will be created for image _with_ its extension. Default:
@@ -91,7 +91,7 @@ A function that takes the path of each image retrieved by the glob(s), and retur
 (image) => image.replace(/^src/, '')
 ```
 
-### makeUtilityWithoutExtension
+### `makeUtilityWithoutExtension`
 Type: ```function(imagePath: string): string | false | null | undefined``` or `false`/`null`/`undefined`
 
 A function that takes the path of each image retrieved by the glob(s), and returns the name of the Tailwind utility to be created _without_ the image's extension. Or, if falsy, no utility will be created for image _without_ the image's extension. Default:
@@ -100,7 +100,7 @@ A function that takes the path of each image retrieved by the glob(s), and retur
 (image) => image.replace(/^src|\.\w+$/g, '')
 ```
 
-### utilityPrefix
+### `utilityPrefix`
 Type: ```string | false | null | undefined```
 
 The string to be added as the prefix for all the utilities created by this plugin.
