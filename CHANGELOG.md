@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/olenzilla/tailwindcss-plugin-background-image/compare/v1.0.2...v1.0.3) (2023-07-22)
+
+
+### Bug Fixes
+
+* **docs:** Adds NPM-related images to README ([27cd152](https://github.com/olenzilla/tailwindcss-plugin-background-image/commit/27cd1521a0e874e654bdd645e32efb709720ea85))
+
 ## [1.0.2](https://github.com/olenzilla/tailwindcss-plugin-background-image/compare/v1.0.1...v1.0.2) (2023-07-22)
 
 
