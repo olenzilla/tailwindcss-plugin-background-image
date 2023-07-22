@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-template",
+  "name": "@olenzilla/tailwindcss-plugin-background-image",
   "version": "0.0.0-development",
   "description": "A Tailwind plugin that generates background-image TailwindCSS utilities from glob'd pattern of image files.",
   "files": [
@@ -17,6 +17,26 @@
         "types": "./lib/cjs/types/index.d.ts",
         "default": "./lib/cjs/index.js"
       }
+    },
+    "./make-plugin": {
+      "import": {
+        "types": "./lib/esm/types/make-plugin.d.ts",
+        "default": "./lib/esm/make-plugin.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/make-plugin.d.ts",
+        "default": "./lib/cjs/make-plugin.js"
+      }
+    },
+    "./nuxt": {
+      "import": {
+        "types": "./lib/esm/types/nuxt.d.ts",
+        "default": "./lib/esm/nuxt.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/nuxt.d.ts",
+        "default": "./lib/cjs/nuxt.js"
+      }
     }
   },
   "scripts": {
@@ -30,17 +50,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OlenDavis/npm-package-template.git"
+    "url": "https://github.com/olenzilla/tailwindcss-plugin-background-image.git"
   },
-  "keywords": [],
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "bg-images",
+    "background-image",
+    "plugin",
+    "postcss",
+    "css",
+    "react",
+    "gatsby",
+    "next",
+    "vue",
+    "nuxt"
+  ],
   "author": "Olen Davis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OlenDavis/npm-package-template/issues"
+    "url": "https://github.com/olenzilla/tailwindcss-plugin-background-image/issues"
   },
-  "homepage": "https://github.com/OlenDavis/npm-package-template#readme",
+  "homepage": "https://github.com/olenzilla/tailwindcss-plugin-background-image#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "glob": "^10.3.3",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
