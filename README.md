@@ -1,6 +1,6 @@
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+# @olenzilla/tailwindcss-plugin-background-image ![npm](https://img.shields.io/npm/v/@olenzilla/tailwindcss-plugin-background-image) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-# tailwindcss-plugin-background-image
+[![NPM](https://nodei.co/npm/@olenzilla/tailwindcss-plugin-background-image.png)](https://nodei.co/npm/@olenzilla/tailwindcss-plugin-background-image/)
 
 A Tailwind plugin that generates background-image TailwindCSS utilities from glob'd pattern of image files.
 
