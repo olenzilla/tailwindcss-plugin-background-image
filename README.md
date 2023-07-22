@@ -65,10 +65,44 @@ module.exports = {
 
 With any of the following options, to customize any aspect of this plugin for your particular project:
 
-Option | Type / Description | Default
----|---|---
-globOptionsByPattern | Object whose keys are glob patterns, and whose values are the corresponding [GlobOptions](https://github.com/isaacs/node-glob/blob/main/README.md#options)> for that glob pattern. | ```{ './src/**/*.@(jpg|jpeg|png|gif|svg|webp)': { dot: true } }```
-makeStyle | `function(imagePath: string): {backgroundImage: string}` or `false`/`null`/`undefined` -- A function that takes the path of each image retrieved by the glob(s), and returns a dictionary for the `background-image` style of the created Tailwind utility. Or, if falsy, no utility will be created for that image. | ```(image) => ({ backgroundImage: `url('${image}')` })```
-makeUtilityWithExtension | ```function(imagePath: string): string | false | null | undefined``` or `false`/`null`/`undefined` -- A function that takes the path of each image retrieved by the glob(s), and returns the name of the Tailwind utility to be created _with_ the image's extension (to disambiguate it from another image with the same name but different extension). Or, if falsy, no utility will be created for image _with_ its extension. | `(image) => image.replace(/^src/, '')`
-makeUtilityWithoutExtension | ```function(imagePath: string): string | false | null | undefined``` or `false`/`null`/`undefined` -- A function that takes the path of each image retrieved by the glob(s), and returns the name of the Tailwind utility to be created _without_ the image's extension. Or, if falsy, no utility will be created for image _without_ the image's extension. | `(image) => image.replace(/^src|\.\w+$/g, '')`
-utilityPrefix | ```string | false | null | undefined``` -- The string to be added as the prefix for all the utilities created by this plugin | `'bg-'`
+## `makePlugin` Options
+
+### `globOptionsByPattern`
+Object whose keys are glob patterns, and whose values are the corresponding [GlobOptions](https://github.com/isaacs/node-glob/blob/main/README.md#options)> for that glob pattern. Default:
+
+```
+{ './src/**/*.@(jpg|jpeg|png|gif|svg|webp)': { dot: true } }
+```
+
+### makeStyle
+Type: `function(imagePath: string): {backgroundImage: string}` or `false`/`null`/`undefined`
+
+A function that takes the path of each image retrieved by the glob(s), and returns a dictionary for the `background-image` style of the created Tailwind utility. Or, if falsy, no utility will be created for that image. Default:
+```
+(image) => ({ backgroundImage: `url('${image}')` })
+```
+
+### makeUtilityWithExtension
+Type: ```function(imagePath: string): string | false | null | undefined``` or `false`/`null`/`undefined`
+
+A function that takes the path of each image retrieved by the glob(s), and returns the name of the Tailwind utility to be created _with_ the image's extension (to disambiguate it from another image with the same name but different extension). Or, if falsy, no utility will be created for image _with_ its extension. Default:
+
+```
+(image) => image.replace(/^src/, '')
+```
+
+### makeUtilityWithoutExtension
+Type: ```function(imagePath: string): string | false | null | undefined``` or `false`/`null`/`undefined`
+
+A function that takes the path of each image retrieved by the glob(s), and returns the name of the Tailwind utility to be created _without_ the image's extension. Or, if falsy, no utility will be created for image _without_ the image's extension. Default:
+
+```
+(image) => image.replace(/^src|\.\w+$/g, '')
+```
+
+### utilityPrefix
+Type: ```string | false | null | undefined```
+
+The string to be added as the prefix for all the utilities created by this plugin.
+
+Default: `'bg-'`
